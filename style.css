@@ -122,4 +122,10 @@
           display: block;
           margin: 1rem 0;
         }
+        .us {
+          flex-direction: column;
+        }
+        h2 {
+          font-size: 6rem;
+        }
       }
