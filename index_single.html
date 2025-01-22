@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Single Page Website (Single-File)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+
+    /* Basic reset and body styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color:#fff;
+      
+    }
+
+    /* Navigation styles */
+    nav {
+      background: #333;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: inline-block;
+    }
+
+    nav li {
+      display: inline;
+      margin: 0 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+.btn {
+    background: rgb(0, 126, 119);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+    font-size: 4rem;
+    border-radius: 20px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section styling */
+    section {
+      padding: 4rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section:nth-child(even) {
+      background: #222;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+      font-size: 10rem;
+    }
+    .us {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5rem;
+    }
+    .us img {
+      width: 50%;
+      border-radius: 50%;
+      margin: 0 1rem;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      
+    }
+    .text-shadow {
+      text-shadow: 5px 15px 20px rgba(0, 0, 0, 0.2);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .contact-form input {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
+    /* Responsive media query */
+    @media (max-width: 600px) {
+      nav ul {
+        display: block;
+      }
+      nav li {
+        display: block;
+        margin: 1rem 0;
+      }
+      .us {
+        flex-direction: column;
+      }
+      h2 {
+        font-size: 6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Home Section -->
+  <section style="background-image: url(assets/hero.webp); background-size: cover; " id="home">
+    <div class="container">
+      <h2 class="text-shadow">Deep Sec</h2>
+      <p class="text-shadow">Welcome to our Single Page Website! Scroll down or use the navigation to explore.</p>
+      <button class="btn">Explore More</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section style="background-color: #333;" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a small team dedicated to building simple and intuitive web solutions.  </p>
+      <div class="us">
+        <img src="assets/staff1.webp" alt="">
+        <img src="assets/staff2.webp" alt="">
+        <img src="assets/staff3.webp" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section  id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <p>We offer design, development, and consulting services to help bring your ideas to life. </p>
+    <img src="assets/service.webp" width="70%" alt="">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section style="background-color: black;" id="contact">
+    <div class="container text-center">
+      <h2>Contact</h2>
+      <p>Get in touch with us to learn more about our services and how we can work together.</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <textarea placeholder="Message"></textarea>
+        <button class="btn">Send</button>
+    </div>
+  </section>
+
+  <script>
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetID = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetID);
+
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
