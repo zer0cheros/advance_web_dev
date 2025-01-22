@@ -68,11 +68,11 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-        align-items: center;
+      align-items: center;
     }
 
     section:nth-child(even) {
-      background: #f4f4f4;
+      background: #222;
     }
 
     h2 {
@@ -90,7 +90,7 @@
       border-radius: 50%;
       margin: 0 1rem;
     }
-
+    
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -100,7 +100,26 @@
     .text-shadow {
       text-shadow: 5px 15px 20px rgba(0, 0, 0, 0.2);
     }
-
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .contact-form input {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
     /* Responsive media query */
     @media (max-width: 600px) {
       nav ul {
@@ -114,7 +133,6 @@
   </style>
 </head>
 <body>
-
   <!-- Navigation -->
   <nav>
     <ul>
@@ -124,7 +142,6 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-
   <!-- Home Section -->
   <section style="background-image: url(assets/hero.webp); background-size: cover; " id="home">
     <div class="container">
@@ -148,18 +165,24 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services">
+  <section  id="services">
     <div class="container">
       <h2>Services</h2>
-      <p>We offer design, development, and consulting services to help bring your ideas to life.</p>
+      <p>We offer design, development, and consulting services to help bring your ideas to life. </p>
+    <img src="assets/service.webp" width="70%" alt="">
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
+  <section style="background-color: black;" id="contact">
+    <div class="container text-center">
       <h2>Contact</h2>
       <p>Get in touch with us to learn more about our services and how we can work together.</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <textarea placeholder="Message"></textarea>
+        <button class="btn">Send</button>
     </div>
   </section>
 
